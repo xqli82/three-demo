@@ -12,6 +12,7 @@
   "author": "dashuaige",
   "license": "ISC",
   "devDependencies": {
+    "@types/three": "^0.103.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.2",
     "file-loader": "^6.1.0",
