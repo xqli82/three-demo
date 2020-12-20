@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            box-shadow: 0 0 10px black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="app"></canvas>
+    <script>
+        const width = 500
+        const height = 500
+        const c = document.getElementById('app')
+        c.width = width
+        c.height = height
+        const ctx = c.getContext('2d')
+
+        // context.fillStyle='coral';
+        // context.fillRect(100,100,300,300);
+        const img = new Image()
+
+        img.src = 'img.jpg'
+
+        img.onload = function () {
+            ctx.drawImage(this, 0, 0, 300, 300);
+
+            ctx.font = "20px arial"
+            ctx.fillText('hello world', 50, 50);
+
+            ctx.strokeStyle = 'red';
+            ctx.strokeRect(50, 50, 100, 100);
+        }
+
+
+    </script>
+</body>
+
+</html>
