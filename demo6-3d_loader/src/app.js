@@ -12,12 +12,6 @@ import img2 from './model/demo1/Groundcover_River_Rock_4_inch.jpg'
 import img3 from './model/demo1/Pavers_Driveway_Brick.jpg'
 import img4 from './model/demo1/Pavers_with_Grass_Herringbone.jpg'
 import img5 from './model/demo1/Vegetation_Grass_Artificial.jpg'
-console.log(img1)
-console.log(img2)
-console.log(img3)
-console.log(img4)
-console.log(img5)
-
 
 export default class app {
     constructor() {
@@ -28,6 +22,10 @@ export default class app {
         })
         this.renderer.setClearColor(0x177fb3, 0.5) //颜色和透明度
         this.control = new OrbitControls(this.camera, this.renderer.domElement)
+        this.x=0
+        this.y=100
+        this.z=100
+        this.angle=0
         this.init()
     }
     init() {
@@ -45,13 +43,8 @@ export default class app {
         this.render()
     }
     geomotry() {
-        let plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(50, 50, 10, 10), new THREE.MeshNormalMaterial({
-            color: 0xff0000,
-            side: DoubleSide
-        }))
-        this.scene.add(plane)
-        this.scene.add(new THREE.AmbientLight(0xffffff, 0.9))
 
+        this.scene.add(new THREE.AmbientLight(0xffffff, 0.9))
         new ColladaLoader().load(collada, collada => {
             //添加阴影
             collada.scene.traverse(function (item) {
@@ -61,15 +54,26 @@ export default class app {
                 }
             });
             //缩放
-            collada.scene.scale.set(0.5, 0.5, 0.5);
+            collada.scene.scale.set(0.2, 0.2, 0.2)
             collada.scene.translateX(-50)
             collada.scene.translateY(-5)
             collada.scene.translateZ(-5)
+            console.log(collada.scene)
             this.scene.add(collada.scene);
         })
     }
     render() {
         window.requestAnimationFrame(() => this.render())
+        
+        this.angle +=0.01
+        this.x =200*Math.sin(this.angle)
+        this.z =200*Math.cos(this.angle)
+        this.y =100
+        // console.log(this.x,this.y,this.z)
+        this.camera.lookAt(0,0,0)
+
+
+        this.camera.position.set(this.x,this.y,this.z)
         this.renderer.render(this.scene, this.camera)
     }
     resize() {
