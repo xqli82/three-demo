@@ -1,0 +1,39 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Vegetation_Grass_Artificial
+Ka 0.000000 0.000000 0.000000
+Kd 0.384314 0.549020 0.290196
+Ks 0.330000 0.330000 0.330000
+map_Kd demo1/Vegetation_Grass_Artificial.jpg
+
+newmtl Pavers_Driveway_Brick
+Ka 0.000000 0.000000 0.000000
+Kd 0.690196 0.509804 0.415686
+Ks 0.330000 0.330000 0.330000
+map_Kd demo1/Pavers_Driveway_Brick.jpg
+
+newmtl Groundcover_Gravel_1_inch
+Ka 0.000000 0.000000 0.000000
+Kd 0.596078 0.521569 0.431373
+Ks 0.330000 0.330000 0.330000
+map_Kd demo1/Groundcover_Gravel_1_inch.jpg
+
+newmtl Pavers_with_Grass_Herringbone
+Ka 0.000000 0.000000 0.000000
+Kd 0.772549 0.788235 0.745098
+Ks 0.330000 0.330000 0.330000
+map_Kd demo1/Pavers_with_Grass_Herringbone.jpg
+
+newmtl Groundcover_River_Rock_4_inch
+Ka 0.000000 0.000000 0.000000
+Kd 0.568627 0.494118 0.427451
+Ks 0.330000 0.330000 0.330000
+map_Kd demo1/Groundcover_River_Rock_4_inch.jpg
+

@@ -46,8 +46,16 @@ export default class app {
             side: DoubleSide,
             map: this.texture
         }))
+        const tube2 = new THREE.TubeBufferGeometry(path, 50, 1.1, 50, false)
+        const g2 = new THREE.Mesh(tube2, new THREE.MeshBasicMaterial({
+            color: 0x4488ff,
+            side: DoubleSide,
+            transparent:true,
+            opacity:0.3
+        }))
 
         this.scene.add(g1)
+        this.scene.add(g2)
     }
     render() {
         window.requestAnimationFrame(() => this.render())
