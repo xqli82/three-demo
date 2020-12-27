@@ -1,4 +1,4 @@
-import app from './app'
 import './css/base.css'
+import obj from './obj'
 
-new app()
+new obj()
